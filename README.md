@@ -262,6 +262,7 @@ A theoretically simple motion may become unreliable when implemented physically.
 
 ---
 
+
 ## Final Demonstration
 
 Our completed robot successfully performed the required obstacle-course sequence during the graded assessment.
@@ -274,21 +275,62 @@ The robot:
 4. Executed the multi-stage turning manoeuvre.
 5. Returned across the obstacles to the starting area.
 
-**Final Assessment Result: 9/10 points**
+### Final Assessment Result: 9/10
 
-The robot achieved the functional objectives. The remaining point was associated with the weight-based bonus criterion.
+The robot successfully completed the functional objectives, with the remaining point associated with the weight-based bonus criterion.
 
-Following the successful run, we attempted to construct a substantially lighter alternative within approximately 30 minutes. However, this configuration proved unstable on the ramp, and we retained our original successful design.
+Following our successful run, we attempted to construct a substantially lighter alternative within approximately 30 minutes.
+
+However, the alternative configuration proved unstable on the ramp, and we retained our original successful design.
 
 ### Project Documentary
 
-To document the engineering journey, we produced a humorous technical documentary covering the design process, prototype failures, emergency rebuild, final innovations, and successful assessment.
+To document our engineering journey, I led the planning, editing, and production of a humorous technical documentary covering the design process, prototype failures, emergency rebuild, final innovations, and successful assessment.
 
-The video combines actual development footage, engineering explanations, CAD visualisations, narration, and edited demonstrations.
+The video combines actual development footage, technical explanations, CAD visualisations, narration, and edited demonstrations.
 
-**Project Video:** [Add video link here]
+**[Watch the EG1311 Project Documentary](https://drive.google.com/file/d/1yghTcQ48Xz5H5TcIuv9oKxgPzhpPpsCA/view)**
 
 The documentary was submitted and screened during our EG1311 class on 3 November 2026.
+
+---
+
+## Arduino Firmware
+
+The final robot used an Arduino-based control system to coordinate its drivetrain, ultrasonic sensor, and servo-actuated launcher.
+
+### Control Architecture
+
+The firmware implemented:
+
+- **Motor Control:** Two independently driven DC motors controlled through an L293D motor driver.
+- **Wall Detection:** An HC-SR04 ultrasonic sensor used to determine when the robot should stop approaching the wall.
+- **Launcher Control:** Servo actuation to release the ping-pong ball over the wall.
+- **Differential Steering:** Opposing motor directions to rotate the robot.
+- **Multi-Stage Turning:** A sequence of timed rotations and reverse movements to reposition the robot for its return journey.
+- **Movement Stabilisation:** Short delays between actions to allow the robot to settle before executing subsequent movements.
+
+### Control Sequence
+
+1. Initialise the motors, ultrasonic sensor, and servo.
+2. Drive forward while monitoring the distance to the wall.
+3. Stop when the calibrated distance threshold is reached.
+4. Activate the servo-powered launcher.
+5. Reverse slightly to provide clearance from the wall.
+6. Execute the multi-stage turning sequence.
+7. Drive forward across the obstacles to return to the starting area.
+
+The final approach used ultrasonic sensing rather than relying solely on fixed motor-running durations, as motor speed varied with battery condition.
+
+The return manoeuvre used timed movements calibrated through repeated physical testing.
+
+### Source Code
+
+The final Arduino source code is available in the [`firmware/`](firmware/) directory.
+
+**Original team repository:** [EG1311-code](https://github.com/itsme-zeix/EG1311-code)
+
+Firmware development was primarily undertaken by other team members, while hardware integration, calibration, troubleshooting, and testing were performed collaboratively.
 
 ---
 
@@ -298,28 +340,35 @@ The documentary was submitted and screened during our EG1311 class on 3 November
 
 This was a collaborative six-member engineering project, with most of the physical development carried out collectively.
 
-My contributions included:
+I contributed substantially throughout the hands-on engineering process, including:
 
-- Participating extensively in mechanical design discussions and concept evaluation.
-- Hands-on fabrication, assembly, and modification of physical prototypes.
+- Mechanical design discussions and concept evaluation.
+- Fabrication, assembly, and modification of physical prototypes.
 - Experimentation with lightweight materials, structural configurations, and wheel traction.
 - Troubleshooting chassis stability, weight distribution, and subsystem integration.
-- Participating in the development and testing of the multi-stage turning strategy.
-- Supporting iterative testing, redesign, and final hardware integration.
-- Leading the planning, editing, and production of the final project documentary.
+- Development and testing of the multi-stage turning strategy.
+- Iterative testing, structural redesign, and final hardware integration.
+
+In addition to the engineering work, I took primary responsibility for the project's video production, including:
+
+- Developing the documentary's narrative structure and storyboard.
+- Planning and editing the visual presentation of engineering decisions and failures.
+- Producing technical overlays, animations, and visual explanations.
+- Integrating narration, music, sound effects, subtitles, and project footage.
+- Editing and delivering the final project documentary using DaVinci Resolve.
 
 ### Team Contributions
 
-The final robot was developed collaboratively by the project team.
+The final robot was designed, assembled, tested, and refined collaboratively by our six-member project team.
 
 The Arduino firmware, formal engineering report, and post-development CAD documentation were primarily produced by other team members.
 
-**Arduino Firmware:** [Link to team's GitHub repository]
+The CAD models were predominantly created to document the completed design rather than being used extensively during physical development.
 
 ### Acknowledgements
 
-National University of Singapore  
+**National University of Singapore**  
 EG1311 Design and Make  
 AY2026/27 Semester 1
 
-Thanks to our teammates, teaching assistants, and instructors for their contributions and guidance throughout the project.
+Special thanks to my teammates, teaching assistants, and instructors for their contributions and guidance throughout the project.
