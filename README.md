@@ -37,7 +37,52 @@ The project involved extensive physical prototyping, iterative testing, mechanic
 Although our final design achieved the functional objectives, we did not secure the additional point awarded for minimum weight.
 
 
+
 ## Final Robot
+
+The final robot was developed through repeated physical prototyping and testing. Rather than following a CAD-first design process, our team primarily relied on hands-on experimentation, making adjustments based on observed performance.
+
+### Final Assembly
+
+![Final Robot - Front View](media/final-robot-front.jpg)
+
+![Final Robot - Rear View](media/final-robot-rear.jpg)
+
+### Hardware Architecture
+
+| Component | Implementation |
+|---|---|
+| Microcontroller | Arduino |
+| Motor Driver | L293D |
+| Drivetrain | Dual-motor rear-wheel drive |
+| Distance Sensing | HC-SR04 ultrasonic sensor |
+| Ball Launcher | Directly servo-actuated paper arm and cup |
+| Chassis | Cardboard with reinforced structural supports |
+| Wheels | Direct-drive rear wheels with passive front wheels |
+| Power Supply | 6 × AA battery pack for motors; separate 9V battery for Arduino |
+
+### Key Design Principles
+
+**1. Mechanical Simplicity**
+
+Earlier launcher and drivetrain designs introduced unnecessary mechanical complexity and potential failure points.
+
+The final configuration directly coupled the driving wheels to their motors and the lightweight launching arm to its servo, reducing the number of moving components.
+
+**2. Stability and Weight Distribution**
+
+We adopted a wider, reinforced chassis and positioned the centre of gravity closer to the rear driving wheels.
+
+This improved traction and reduced the tendency to topple while traversing the ramp.
+
+**3. Modularity and Repairability**
+
+The final assembly incorporated removable components secured through friction-fit connections and tape.
+
+This allowed us to reposition or replace components quickly during testing, which proved especially valuable under tight time constraints.
+
+The final configuration prioritised reliability and repeatability over the original goal of achieving the lowest possible weight.
+
 
 ## Engineering Development
 
