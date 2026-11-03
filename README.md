@@ -299,6 +299,8 @@ The documentary was submitted and screened during our EG1311 class on 3 November
 
 The final robot used an Arduino-based control system to coordinate its drivetrain, ultrasonic sensor, and servo-actuated launcher.
 
+The Arduino firmware was primarily developed by other members of the project team. This copy was obtained from the team's original GitHub repository and is included to document the complete robot system. Hardware integration and testing were conducted collaboratively.
+
 ### Control Architecture
 
 The firmware implemented:
